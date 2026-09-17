@@ -1,0 +1,410 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: #0f0f10;
+  --card: #ffffff;
+  --card-foreground: #0f0f10;
+  --popover: #ffffff;
+  --popover-foreground: #0f0f10;
+  --primary: #0f0f10;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #6b6b73;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e7e7ea;
+  --input: #e4e4e7;
+  --ring: #a1a1aa;
+  --chart-1: #18181b;
+  --chart-2: #52525b;
+  --chart-3: #a1a1aa;
+  --chart-4: #d4d4d8;
+  --chart-5: #f4f4f5;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #0f0f10;
+  --sidebar-primary: #0f0f10;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e7e7ea;
+  --sidebar-ring: #a1a1aa;
+
+  /* Checked-paper page background */
+  --grid-line: #ececef;
+  --grid-size: 28px;
+}
+
+/* Paper tones for the envelopes */
+:root {
+  --paper: #fbfaf7;
+  --paper-flap: #f1eee6;
+  --paper-line: #e4e0d5;
+}
+
+.dark {
+  --background: #0e0f12;
+  --foreground: #ececef;
+  --card: #15171b;
+  --card-foreground: #ececef;
+  --popover: #16181c;
+  --popover-foreground: #ececef;
+  --primary: #f4f4f5;
+  --primary-foreground: #0e0f12;
+  --secondary: #1f2126;
+  --secondary-foreground: #e4e4e7;
+  --muted: #1c1e23;
+  --muted-foreground: #9a9ca6;
+  --accent: #1f2126;
+  --accent-foreground: #e4e4e7;
+  --border: #2a2d33;
+  --input: #2f3238;
+  --ring: #52525b;
+  --grid-line: #1b1d22;
+  --paper: #17191d;
+  --paper-flap: #1f2227;
+  --paper-line: #2c2f35;
+  color-scheme: dark;
+}
+
+/* Bonfire: a warm night version of dark */
+.bonfire {
+  --background: #120d0a;
+  --foreground: #f3e9df;
+  --card: #1a130f;
+  --card-foreground: #f3e9df;
+  --popover: #1c1511;
+  --popover-foreground: #f3e9df;
+  --primary: #ffb46b;
+  --primary-foreground: #1a0f08;
+  --secondary: #261b15;
+  --secondary-foreground: #f3e9df;
+  --muted: #221813;
+  --muted-foreground: #b39c8b;
+  --accent: #2a1d15;
+  --accent-foreground: #f3e9df;
+  --border: #36271e;
+  --input: #3b2b21;
+  --ring: #c2703a;
+  --grid-line: #1e1510;
+  --paper: #1d1511;
+  --paper-flap: #271c16;
+  --paper-line: #3a2a20;
+}
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    background-position: center top;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Roaming cat (components/RoamingCat.tsx) */
+@keyframes cat-leg-a {
+  0%, 100% { transform: rotate(24deg); }
+  50% { transform: rotate(-24deg); }
+}
+@keyframes cat-leg-b {
+  0%, 100% { transform: rotate(-24deg); }
+  50% { transform: rotate(24deg); }
+}
+@keyframes cat-step {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-0.8px); }
+}
+@keyframes cat-tail {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(14deg); }
+}
+@keyframes cat-paw {
+  0% { opacity: 0; }
+  8% { opacity: 0.45; }
+  100% { opacity: 0; }
+}
+.cat-leg {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+.cat-tail {
+  transform-box: view-box;
+  transform-origin: 13px 27px;
+  animation: cat-tail 1.6s ease-in-out infinite;
+}
+@keyframes cat-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.cat-eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: cat-blink 4s ease-in-out infinite;
+}
+.cat-eyes-happy { display: none; }
+.cat[data-happy='true'] .cat-eyes { display: none; }
+.cat[data-happy='true'] .cat-eyes-happy { display: inline; }
+.cat[data-walking='true'] .cat-leg--a { animation: cat-leg-a 0.45s ease-in-out infinite; }
+.cat[data-walking='true'] .cat-leg--b { animation: cat-leg-b 0.45s ease-in-out infinite; }
+.cat[data-walking='true'] .cat-body { animation: cat-step 0.45s ease-in-out infinite; }
+.cat[data-walking='false'] .cat-tail { animation-duration: 0.9s; }
+.cat-paw { animation: cat-paw 6s ease-out forwards; }
+
+/* Unusual achievements: stick-figure animations (see components/unusual/Illustrations.tsx).
+   Joints rotate around points in the SVG's own coordinates. */
+.ua-joint {
+  transform-box: view-box;
+}
+
+/* Runner: legs and arms swing in opposite phases */
+@keyframes ua-thigh {
+  0%, 100% { transform: rotate(-35deg); }
+  50% { transform: rotate(32deg); }
+}
+@keyframes ua-shin {
+  0%, 100% { transform: rotate(15deg); }
+  30% { transform: rotate(8deg); }
+  55% { transform: rotate(55deg); }
+  78% { transform: rotate(95deg); }
+}
+@keyframes ua-arm {
+  0%, 100% { transform: rotate(45deg); }
+  50% { transform: rotate(-50deg); }
+}
+@keyframes ua-bob {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-1.5px); }
+}
+@keyframes ua-ground {
+  to { stroke-dashoffset: -16; }
+}
+.ua-run { --ua-run: 0.7s; }
+.ua-run .ua-thigh { animation: ua-thigh var(--ua-run) ease-in-out infinite; }
+.ua-run .ua-shin { animation: ua-shin var(--ua-run) ease-in-out infinite; }
+.ua-run .ua-arm { animation: ua-arm var(--ua-run) ease-in-out infinite; }
+.ua-run .ua-back { animation-delay: calc(var(--ua-run) / -2); }
+.ua-run .ua-body { animation: ua-bob calc(var(--ua-run)) ease-in-out infinite; }
+.ua-run .ua-ground { stroke-dasharray: 6 10; animation: ua-ground 0.35s linear infinite; }
+
+/* Batsman: backlift, drive, follow-through; ball comes in and flies off the bat */
+@keyframes ua-swing {
+  0%, 38% { transform: rotate(185deg); }
+  50% { transform: rotate(40deg); }
+  62%, 82% { transform: rotate(-110deg); }
+  100% { transform: rotate(185deg); }
+}
+@keyframes ua-cricket-ball {
+  0%, 28% { transform: translate(64px, 40px); opacity: 0; }
+  30% { transform: translate(62px, 40px); opacity: 1; }
+  50% { transform: translate(29px, 45px); opacity: 1; }
+  70% { transform: translate(70px, 0px); opacity: 1; }
+  71%, 100% { transform: translate(70px, 0px); opacity: 0; }
+}
+.ua-bat .ua-swing { animation: ua-swing 2.4s ease-in-out infinite; }
+.ua-bat .ua-ball { transform: translate(64px, 40px); opacity: 0; animation: ua-cricket-ball 2.4s linear infinite; }
+
+/* Tennis: rally over the net, forehand on each return */
+@keyframes ua-racket {
+  0%, 100% { transform: rotate(0deg); }
+  8%, 30% { transform: rotate(-55deg); }
+  70%, 90% { transform: rotate(60deg); }
+}
+@keyframes ua-tennis-ball {
+  0%, 100% { transform: translate(31px, 33px); }
+  15% { transform: translate(44px, 26px); }
+  30% { transform: translate(54px, 44px); }
+  38% { transform: translate(58px, 55px); }
+  48% { transform: translate(61px, 44px); }
+  55% { transform: translate(63px, 38px); }
+  65% { transform: translate(47px, 26px); }
+  75% { transform: translate(33px, 44px); }
+  82% { transform: translate(27px, 55px); }
+  91% { transform: translate(28px, 43px); }
+}
+.ua-tennis .ua-racket { animation: ua-racket 2s ease-in-out infinite; }
+.ua-tennis .ua-tball { transform: translate(31px, 33px); animation: ua-tennis-ball 2s linear infinite; }
+
+/* Medal: gentle swing on its ribbon */
+@keyframes ua-medal {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+.ua-medal { transform-origin: top center; animation: ua-medal 2.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ua-run *, .ua-bat *, .ua-tennis *, .ua-medal { animation: none !important; }
+  .ua-bat .ua-ball { opacity: 0; }
+}
+
+/* Bonfire mode (theme/BonfireScene.tsx) */
+@keyframes bf-flicker {
+  0%, 100% { opacity: 1; }
+  18% { opacity: 0.86; }
+  34% { opacity: 0.97; }
+  52% { opacity: 0.8; }
+  70% { opacity: 0.95; }
+  86% { opacity: 0.88; }
+}
+@keyframes bf-flame {
+  0%, 100% { transform: scale(1, 1) skewX(0deg); }
+  25% { transform: scale(0.94, 1.08) skewX(-3deg); }
+  50% { transform: scale(1.04, 0.94) skewX(2deg); }
+  75% { transform: scale(0.97, 1.05) skewX(-1deg); }
+}
+.bf-flicker { animation: bf-flicker 2.3s ease-in-out infinite; }
+.bf-flame {
+  transform-box: view-box;
+  transform-origin: 40px 78px;
+  animation: bf-flame 0.9s ease-in-out infinite;
+}
+.bf-flame--2 { animation-duration: 0.7s; animation-delay: -0.2s; }
+.bf-flame--3 { animation-duration: 0.55s; animation-delay: -0.35s; }
+@media (prefers-reduced-motion: reduce) {
+  .bf-flicker, .bf-flame { animation: none; }
+}
+
+/* Home walker (components/HomeWalker.tsx) */
+@keyframes hw-swing-a {
+  0%, 100% { transform: rotate(28deg); }
+  50% { transform: rotate(-28deg); }
+}
+@keyframes hw-swing-b {
+  0%, 100% { transform: rotate(-28deg); }
+  50% { transform: rotate(28deg); }
+}
+.hw-limb { transform-box: view-box; transition: transform 0.2s ease; }
+.hw-person[data-walking='true'] .hw-limb--a { animation: hw-swing-a 0.5s ease-in-out infinite; }
+.hw-person[data-walking='true'] .hw-limb--b { animation: hw-swing-b 0.5s ease-in-out infinite; }
+/* Pushing: both arms straight out in front */
+.hw-person[data-pushing='true'] g.hw-limb:nth-of-type(1),
+.hw-person[data-pushing='true'] .hw-arm-front { transform: rotate(-80deg); }
+
+/* Street of sections (components/street) */
+.st-win { fill: var(--muted); transition: fill 0.4s ease, filter 0.4s ease; }
+.st-building[data-active='true'] .st-win { fill: #fcd34d; filter: drop-shadow(0 0 2px rgba(252, 211, 77, 0.9)); }
+.st-beacon { fill: #ef4444; }
+.st-building[data-active='true'] .st-beacon { animation: st-blink 1.2s steps(1) infinite; }
+.st-lamp { fill: var(--muted-foreground); }
+.dark .st-lamp { fill: #fde68a; filter: drop-shadow(0 0 3px rgba(253, 230, 138, 0.9)); }
+
+@keyframes st-blink { 50% { opacity: 0.15; } }
+@keyframes st-spin { to { transform: rotate(360deg); } }
+@keyframes st-wave {
+  0%, 100% { transform: skewY(0deg) scaleX(1); }
+  50% { transform: skewY(8deg) scaleX(0.85); }
+}
+@keyframes st-ring {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(18deg); }
+  75% { transform: rotate(-18deg); }
+}
+@keyframes st-bounce {
+  0%, 100% { transform: translate(-10px, 0); }
+  25% { transform: translate(-5px, -12px); }
+  50% { transform: translate(0, 0); }
+  75% { transform: translate(5px, -12px); }
+}
+@keyframes st-post {
+  0%, 30%, 100% { transform: translateY(-4px); opacity: 1; }
+  60% { transform: translateY(6px); opacity: 0; }
+  61%, 70% { transform: translateY(-4px); opacity: 0; }
+}
+@keyframes st-smoke {
+  0% { transform: translate(-50%, 0) scale(0.4); opacity: 0; }
+  20% { opacity: 0.55; }
+  100% { transform: translate(calc(-50% + 10px), -26px) scale(1.6); opacity: 0; }
+}
+.st-gear, .st-flag, .st-bell, .st-ball, .st-letter { transform-box: fill-box; }
+.st-flag { transform-origin: left center; animation: st-wave 1.6s ease-in-out infinite; }
+.st-building[data-active='true'] .st-gear { transform-origin: center; animation: st-spin 3s linear infinite; }
+.st-building[data-active='true'] .st-bell { transform-origin: top center; animation: st-ring 0.6s ease-in-out 3; }
+.st-building[data-active='true'] .st-ball { animation: st-bounce 1.4s ease-in-out infinite; }
+.st-building[data-active='true'] .st-letter { animation: st-post 2.4s ease-in-out infinite; }
+.st-smoke {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--muted-foreground);
+  opacity: 0;
+  animation: st-smoke 2.7s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-flag, .st-building .st-gear, .st-building .st-bell, .st-building .st-ball, .st-building .st-letter,
+  .st-building .st-beacon, .st-smoke { animation: none !important; }
+}
