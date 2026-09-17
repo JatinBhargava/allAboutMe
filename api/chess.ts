@@ -1,5 +1,5 @@
 // Vercel serverless function: GET/POST /api/chess
-import { handleChess } from '../server/chess';
+import { handleChess } from '../server/chess.js';
 
 async function respond(request: Request) {
   let body: unknown = null;

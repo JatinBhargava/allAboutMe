@@ -8,7 +8,7 @@
  */
 import crypto from 'node:crypto';
 import { Chess } from 'chess.js';
-import { getStore } from './store';
+import { getStore } from './store.js';
 
 type Env = Record<string, string | undefined>;
 type Side = 'visitors' | 'owner';

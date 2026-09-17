@@ -1,5 +1,5 @@
 // Vercel serverless function: GET /api/now-playing
-import { getNowPlaying } from '../server/spotify';
+import { getNowPlaying } from '../server/spotify.js';
 
 export async function GET() {
   const result = await getNowPlaying(process.env);

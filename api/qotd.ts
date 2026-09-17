@@ -1,5 +1,5 @@
 // Vercel serverless function: GET /api/qotd
-import { getDailyQuestions } from '../server/qotd';
+import { getDailyQuestions } from '../server/qotd.js';
 
 export async function GET() {
   try {

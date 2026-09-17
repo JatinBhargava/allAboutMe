@@ -1,5 +1,5 @@
 // Vercel serverless function: GET /api/football
-import { getLiverpool } from '../server/football';
+import { getLiverpool } from '../server/football.js';
 
 export async function GET() {
   try {

@@ -1,5 +1,5 @@
 // Vercel serverless function: GET /api/activity
-import { getActivity } from '../server/activity';
+import { getActivity } from '../server/activity.js';
 
 export async function GET() {
   const activity = await getActivity(process.env);
