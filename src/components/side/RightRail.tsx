@@ -8,7 +8,7 @@ const ChessWidget = lazy(() => import('./ChessWidget'));
 
 /**
  * Right gutter: doodle pad, question of the day, chess, latest trip and the Atlas ad.
- * `inline` is the stacked (below the content) layout, where the ad and trip sit side by side.
+ * `inline` (stacked below the content) leaves the trip to the left rail.
  */
 export default function RightRail({ className, inline = false }: { className?: string; inline?: boolean }) {
   return (
@@ -19,17 +19,8 @@ export default function RightRail({ className, inline = false }: { className?: s
         <Suspense fallback={null}>
           <ChessWidget />
         </Suspense>
-        {inline ? (
-          <div className="grid grid-cols-2 items-end gap-3">
-            <AtlasAd />
-            <LatestTripCard />
-          </div>
-        ) : (
-          <>
-            <LatestTripCard />
-            <AtlasAd />
-          </>
-        )}
+        {!inline && <LatestTripCard />}
+        <AtlasAd />
       </div>
     </aside>
   );

@@ -50,7 +50,7 @@ export default function Home() {
       </main>
       {!wide && (
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
-          <LeftRail />
+          <LeftRail inline />
           <RightRail inline />
         </div>
       )}
