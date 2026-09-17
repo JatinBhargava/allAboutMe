@@ -246,7 +246,7 @@ export default function ChessWidget({ className }: { className?: string }) {
         ))}
       </dl>
 
-      <div className={cn('overflow-hidden rounded-md ring-1 ring-black/10', myTurn && 'ring-2 ring-sky-400/70')}>
+      <div className={cn('mx-auto w-fit overflow-hidden rounded-md ring-1 ring-black/10', myTurn && 'ring-2 ring-sky-400/70')}>
         <Chessboard
           id="portfolio-chess"
           position={state.fen}
