@@ -17,7 +17,7 @@ export function LatestTripCard() {
           {/* The cover page already carries the masthead and title. */}
           <img src={t.cover} alt={`${t.place} magazine cover`} loading="lazy" className="block w-full" />
         </motion.div>
-        <div className="mt-2 flex items-center justify-between gap-2">
+        <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
           <p className="min-w-0 leading-tight">
             <span className="flex items-center gap-1 text-sm font-semibold">
               <MapPin className="size-3.5 shrink-0 text-rose-500" />
