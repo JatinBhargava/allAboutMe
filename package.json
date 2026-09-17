@@ -10,6 +10,7 @@
     "spotify:auth": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/spotify-auth.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "chess.js": "^1.4.0",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.3.0",
