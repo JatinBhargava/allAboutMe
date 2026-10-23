@@ -16,16 +16,21 @@ export default function Projects() {
                   {p.tagline} · <span className="font-mono text-xs">{p.period}</span>
                 </p>
               </div>
-              {p.link && (
-                <a
-                  href={p.link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-full border px-3 py-1 text-sm font-medium hover:bg-background"
-                >
-                  {p.link.label}
-                  <ArrowUpRight className="size-3.5" />
-                </a>
+              {p.links && p.links.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {p.links.map((l) => (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full border px-3 py-1 text-sm font-medium hover:bg-background"
+                    >
+                      {l.label}
+                      <ArrowUpRight className="size-3.5" />
+                    </a>
+                  ))}
+                </div>
               )}
             </div>
             <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-foreground/85">

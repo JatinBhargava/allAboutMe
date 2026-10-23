@@ -24,7 +24,7 @@ export interface Project {
   name: string;
   tagline: string;
   period: string;
-  link?: Link;
+  links?: Link[];
   stack: string[];
   highlights: string[];
 }
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     name: "Atlas",
     tagline: "Travel magazine publishing platform",
     period: "Sep 2026 – Present",
-    link: { label: "ouratlas.co.in", href: "https://ouratlas.co.in" },
+    links: [{ label: "ouratlas.co.in", href: "https://ouratlas.co.in" }],
     stack: [
       "TypeScript",
       "React",
@@ -148,6 +148,76 @@ export const projects: Project[] = [
       "Shipped and operate a live subscription product: Google OAuth2, server-verified JWT sessions, PostgreSQL row-level security, and paid entitlement granted only by a signature-verified Dodo webhook, over an append-only ledger that tolerates unordered delivery.",
       "Built a streaming LLM integration (Anthropic / OpenAI) with document chunking.",
       "Deployed to AWS: containerized API on ECS Fargate behind an Application Load Balancer with Route 53 DNS and ACM TLS, SPA served from S3 via CloudFront, secrets in Secrets Manager, CloudWatch logs, and images published to ECR by GitHub Actions.",
+    ],
+  },
+  {
+    name: "Cold Email Desk",
+    tagline: "AI job-search desk for startup cold outreach",
+    period: "Oct 2026 – Present",
+    links: [{ label: "coldemail.ouratlas.co.in", href: "https://coldemail.ouratlas.co.in" }],
+    stack: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Vercel Functions",
+      "Supabase",
+      "PostgreSQL",
+      "Claude API",
+      "Tauri",
+      "Dodo",
+    ],
+    highlights: [
+      "Finds fresh roles and newly funded startups that match a user's profile, scores each one with Claude on five 1–5 signals (funding recency, investors, traction, team fit, skill fit) and drafts a tailored first email from the user's own achievements.",
+      "Multi-user app on Vercel with Google sign-in and Supabase Postgres (14 tables behind row-level security); resumes are parsed by Claude to fill the profile, and an on-demand lookup finds verified work emails for people at each company.",
+      "Tracks every email through sent, follow-up and reply stages with reminders, sells search credits through Dodo payments, and ships as a native macOS and Windows desktop app built with Tauri and released by GitHub Actions.",
+    ],
+  },
+  {
+    name: "Penguin Health",
+    tagline: "RAG and agent assistant for personal medical reports",
+    period: "Oct 2026",
+    links: [{ label: "GitHub", href: "https://github.com/JatinBhargava/penguin-health" }],
+    stack: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "pgvector",
+      "OpenAI",
+      "PDFBox",
+      "Flyway",
+      "Docker",
+    ],
+    highlights: [
+      "Ingests lab-report PDFs: extracts text with PDFBox, splits it into chunks, stores OpenAI embeddings in Postgres with pgvector, and answers questions with retrieval-augmented generation and source citations.",
+      "Extracts structured health events (test, value, date) into a timeline, and runs a tool-calling agent that picks between vector search, latest-result and history tools over up to five reasoning steps.",
+      "Built an evaluation harness that scores retrieval hit rate, answer groundedness and citation accuracy against a labelled question set (e.g. \"What was my HbA1c?\").",
+    ],
+  },
+  {
+    name: "Unsent",
+    tagline: "Social journaling and long-form writing platform",
+    period: "Jan 2026 – Aug 2026",
+    links: [
+      { label: "unsent.vercel.app", href: "https://unsent.vercel.app" },
+      { label: "Frontend", href: "https://github.com/JatinBhargava/unsent-ui" },
+      { label: "Backend", href: "https://github.com/JatinBhargava/unsent-core" },
+    ],
+    stack: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "PostgreSQL",
+      "WebSocket",
+      "React",
+      "TypeScript",
+      "Stripe",
+      "Docker",
+      "Jenkins",
+    ],
+    highlights: [
+      "Writing platform where people keep private or public diaries, send postcards, add friends and co-write stories, with an AI \"continue the story\" helper built on OpenAI.",
+      "Multi-module Spring Boot backend with JWT and Google OAuth2 sign-in, real-time chat over WebSockets, Stripe payments with webhook handling, Flyway-managed Postgres and Caffeine caching.",
+      "React 19 + TypeScript frontend on Vercel with a draft/publish writing flow; CI runs lint, build and Docker image publishing through GitHub Actions and Jenkins.",
     ],
   },
 ];
