@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ComponentType } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Ground, Office, PostOffice, School, SMOKE, Toolshed, Workshop } from './Buildings';
+import { Ground, Lab, Office, PostOffice, School, SMOKE, Toolshed, Workshop } from './Buildings';
 import { InPanel, OPEN_SECTION_EVENT, SECTION_OPENED_EVENT } from './sectionEvents';
 
 export interface StreetStop {
@@ -15,6 +15,7 @@ export interface StreetStop {
 const ART: Record<string, ComponentType> = {
   experience: Office,
   projects: Workshop,
+  agents: Lab,
   skills: Toolshed,
   education: School,
   unusual: Ground,

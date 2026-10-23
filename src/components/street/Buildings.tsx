@@ -52,6 +52,24 @@ export function Workshop() {
   );
 }
 
+/** Agent tools: a little lab with an observatory dome and a blinking antenna. */
+export function Lab() {
+  return (
+    <svg viewBox="0 0 64 64" className="size-full overflow-visible">
+      <line x1="32" y1="20" x2="32" y2="11" {...line} strokeWidth={1.2} />
+      <circle cx="32" cy="10" r="1.3" className="st-beacon" />
+      <path d="M21 32 A11 11 0 0 1 43 32 Z" className={Fill} {...line} fill={undefined} />
+      <path d="M32 21 V32" {...line} strokeWidth={0.9} />
+      <rect x="10" y="32" width="44" height="30" className={Fill} {...line} fill={undefined} />
+      <path d="M7 32 H57" {...line} strokeWidth={2.2} />
+      <Win x={14} y={38} w={8} h={7} />
+      <Win x={42} y={38} w={8} h={7} />
+      <rect x="27" y="46" width="10" height="16" className={Fill} {...line} fill={undefined} />
+      <path d="M16 62 V55 L13 50 H21 L18 55" {...line} strokeWidth={1.1} />
+    </svg>
+  );
+}
+
 /** Skills: a toolshed with a wrench on the door. */
 export function Toolshed() {
   return (
@@ -129,6 +147,7 @@ export const SMOKE: Record<string, [number, number] | undefined> = {
   contact: [39.5, 13],
   experience: undefined,
   skills: undefined,
+  agents: undefined,
   education: undefined,
   unusual: undefined,
 };

@@ -7,6 +7,7 @@ export const tabs = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'agents', label: 'Agent tools' },
   { id: 'skills', label: 'Skills' },
   { id: 'education', label: 'Education' },
   { id: 'unusual', label: 'Unusual' },

@@ -29,6 +29,20 @@ export interface Project {
   highlights: string[];
 }
 
+/** Something built for AI agents to use: a skill, an MCP server, a plugin, a CLI… */
+export interface AgentTool {
+  name: string;
+  /** What kind of thing it is, e.g. "Skill", "MCP server", "Plugin". */
+  kind: string;
+  tagline: string;
+  /** Agents it works with, e.g. "Claude Code", "Codex". */
+  worksWith: string[];
+  /** One command to install it, shown with a copy button. */
+  install?: string;
+  links?: Link[];
+  highlights: string[];
+}
+
 export interface SkillGroup {
   title: string;
   items: string[];
@@ -218,6 +232,34 @@ export const projects: Project[] = [
       "Writing platform where people keep private or public diaries, send postcards, add friends and co-write stories, with an AI \"continue the story\" helper built on OpenAI.",
       "Multi-module Spring Boot backend with JWT and Google OAuth2 sign-in, real-time chat over WebSockets, Stripe payments with webhook handling, Flyway-managed Postgres and Caffeine caching.",
       "React 19 + TypeScript frontend on Vercel with a draft/publish writing flow; CI runs lint, build and Docker image publishing through GitHub Actions and Jenkins.",
+    ],
+  },
+];
+
+// Add new skills, MCP servers or plugins here; newest first.
+export const agentTools: AgentTool[] = [
+  {
+    name: "repo-architecture",
+    kind: "Skill",
+    tagline: "Turns any code repository into an interactive system-design page",
+    worksWith: ["Claude Code", "Codex"],
+    install: "npx github:JatinBhargava/repo-architecture-skill",
+    links: [{ label: "GitHub", href: "https://github.com/JatinBhargava/repo-architecture-skill" }],
+    highlights: [
+      "Reads a repo and draws its clients, services, databases and outside APIs, then plays real request flows (sign-in, payments, webhooks, background jobs) through the diagram one hop at a time.",
+      "Every step cites the file and line it came from, and a validator checks that each citation exists, so nothing on the page is guessed.",
+      "Outputs one self-contained HTML page plus an animated SVG, MP4 and GIF of a flow for READMEs and social posts.",
+    ],
+  },
+  {
+    name: "guided-launch-film",
+    kind: "Skill",
+    tagline: "Makes a cinematic 60-second product launch film with a guide character",
+    worksWith: ["Claude Code"],
+    highlights: [
+      "Builds a 4K launch film on HyperFrames where a small \"buddy\" character walks the viewer through the product, with dry on-screen lines, an optional voice-over and a synthesized score.",
+      "The guide lives on one overlay above every scene, so scenes can cut, zoom and dissolve underneath while it stays in frame.",
+      "Used to make the launch film for Cold Email Desk.",
     ],
   },
 ];

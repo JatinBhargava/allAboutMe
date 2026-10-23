@@ -3,6 +3,7 @@ import TabNav from '@/components/TabNav';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
+import AgentTools from '@/components/AgentTools';
 import Skills from '@/components/Skills';
 import Education from '@/components/Education';
 import Unusual from '@/components/Unusual';
@@ -25,6 +26,7 @@ const rail =
 const stops: StreetStop[] = [
   { id: 'experience', title: 'Experience', place: 'Office', Component: Experience },
   { id: 'projects', title: 'Projects', place: 'Workshop', Component: Projects },
+  { id: 'agents', title: 'Agent tools', place: 'Lab', Component: AgentTools },
   { id: 'skills', title: 'Skills', place: 'Toolshed', Component: Skills },
   { id: 'education', title: 'Education & Achievements', place: 'School', Component: Education },
   { id: 'unusual', title: 'Unusual achievements', place: 'Grounds', Component: Unusual },
