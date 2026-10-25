@@ -62,25 +62,25 @@ export const profile = {
   handle: "@JatinBhargava",
   avatar: "https://github.com/JatinBhargava.png?size=256",
   cover: "/cover.svg",
-  resume: "/Jatin_Bhargava_SDE_Resume.pdf",
+  resume: "/Jatin_Bhargava_Software_Engineer_Resume.pdf",
   company: "FIS Global",
   website: { label: "ouratlas.co.in", href: "https://ouratlas.co.in" },
   headline: {
-    lead: 'I build backend systems that',
+    lead: "I build backend systems that",
     /** Rotates on the header, one after another. */
     endings: [
       "don't flinch at 5M users.",
-      'survive Friday deploys.',
-      'turn 1s into 40ms.',
-      'replay what Kafka dropped.',
-      'page nobody at 3am.',
+      "survive Friday deploys.",
+      "turn 1s into 40ms.",
+      "replay what Kafka dropped.",
+      "page nobody at 3am.",
     ],
   },
   bio: 'Distributed systems, event-driven everything, and a healthy distrust of "it works on my machine". Currently making core banking boring (the good kind) at FIS Global.',
   github: "https://github.com/JatinBhargava",
   linkedin: "https://linkedin.com/in/jatinbhargava10",
   summary:
-    "Backend engineer with 3+ years on production core banking and payments systems in Java, Spring Boot, and Apache Kafka at FIS Global, for a Tier-1 Australia / New Zealand bank serving 5M+ customers. My work spans account origination, transaction processing, and PIE / non-PIE investment-tax classification. I am strongest on scalable system design, event-driven architecture, REST API contracts, and PostgreSQL performance, and I ship containerized services to Kubernetes on Terraform-managed infrastructure.",
+    "Backend engineer with 3+ years on production core banking and payments systems in Java, Spring Boot, and Apache Kafka at FIS Global, serving 10M+ customers. My work spans account origination, transaction processing, and PIE / non-PIE investment-tax classification. I am strongest on scalable system design, event-driven architecture, REST API contracts, and PostgreSQL performance, and I ship containerized services to Kubernetes on Terraform-managed infrastructure.",
   links: [
     { label: "GitHub", href: "https://github.com/JatinBhargava" },
     { label: "LinkedIn", href: "https://linkedin.com/in/jatinbhargava10" },
@@ -104,7 +104,7 @@ export const experience: Experience[] = [
     location: "Bengaluru, India",
     period: "Sep 2023 – Present",
     context:
-      "Core banking for a Tier-1 Australia / New Zealand bank, 5M+ customers",
+      "Core banking , 5M+ customers",
     highlights: [
       "Re-architected nightly batch processing into Kafka event-driven messaging across distributed services with idempotent consumers, retry topics, and dead-letter handling. Failed records now recover in minutes instead of waiting for the next 24-hour window.",
       "Cut customer-profile read latency from 1s to 40ms (96%) with a Redis read-through cache over customer and account reference data, using TTL plus event-driven invalidation to keep cached reads consistent with origination updates.",
@@ -138,7 +138,16 @@ export const experience: Experience[] = [
       "Prepared the invoice dataset for ML: cleaned nulls, duplicates and inconsistent date formats, and engineered features such as payment terms, customer payment history and delay buckets.",
       "Trained a Random Forest classifier on those features to predict which customers were likely to pay late, so collections teams could follow up on at-risk invoices first.",
     ],
-    tags: ["React", "Java", "JDBC", "MySQL", "REST", "Python", "pandas", "Random Forest"],
+    tags: [
+      "React",
+      "Java",
+      "JDBC",
+      "MySQL",
+      "REST",
+      "Python",
+      "pandas",
+      "Random Forest",
+    ],
   },
 ];
 
@@ -168,7 +177,12 @@ export const projects: Project[] = [
     name: "Cold Email Desk",
     tagline: "AI job-search desk for startup cold outreach",
     period: "Oct 2026 – Present",
-    links: [{ label: "coldemail.ouratlas.co.in", href: "https://coldemail.ouratlas.co.in" }],
+    links: [
+      {
+        label: "coldemail.ouratlas.co.in",
+        href: "https://coldemail.ouratlas.co.in",
+      },
+    ],
     stack: [
       "TypeScript",
       "React",
@@ -190,7 +204,12 @@ export const projects: Project[] = [
     name: "Penguin Health",
     tagline: "RAG and agent assistant for personal medical reports",
     period: "Oct 2026",
-    links: [{ label: "GitHub", href: "https://github.com/JatinBhargava/penguin-health" }],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/JatinBhargava/penguin-health",
+      },
+    ],
     stack: [
       "Java",
       "Spring Boot",
@@ -204,7 +223,7 @@ export const projects: Project[] = [
     highlights: [
       "Ingests lab-report PDFs: extracts text with PDFBox, splits it into chunks, stores OpenAI embeddings in Postgres with pgvector, and answers questions with retrieval-augmented generation and source citations.",
       "Extracts structured health events (test, value, date) into a timeline, and runs a tool-calling agent that picks between vector search, latest-result and history tools over up to five reasoning steps.",
-      "Built an evaluation harness that scores retrieval hit rate, answer groundedness and citation accuracy against a labelled question set (e.g. \"What was my HbA1c?\").",
+      'Built an evaluation harness that scores retrieval hit rate, answer groundedness and citation accuracy against a labelled question set (e.g. "What was my HbA1c?").',
     ],
   },
   {
@@ -214,7 +233,10 @@ export const projects: Project[] = [
     links: [
       { label: "unsent.vercel.app", href: "https://unsent.vercel.app" },
       { label: "Frontend", href: "https://github.com/JatinBhargava/unsent-ui" },
-      { label: "Backend", href: "https://github.com/JatinBhargava/unsent-core" },
+      {
+        label: "Backend",
+        href: "https://github.com/JatinBhargava/unsent-core",
+      },
     ],
     stack: [
       "Java",
@@ -229,7 +251,7 @@ export const projects: Project[] = [
       "Jenkins",
     ],
     highlights: [
-      "Writing platform where people keep private or public diaries, send postcards, add friends and co-write stories, with an AI \"continue the story\" helper built on OpenAI.",
+      'Writing platform where people keep private or public diaries, send postcards, add friends and co-write stories, with an AI "continue the story" helper built on OpenAI.',
       "Multi-module Spring Boot backend with JWT and Google OAuth2 sign-in, real-time chat over WebSockets, Stripe payments with webhook handling, Flyway-managed Postgres and Caffeine caching.",
       "React 19 + TypeScript frontend on Vercel with a draft/publish writing flow; CI runs lint, build and Docker image publishing through GitHub Actions and Jenkins.",
     ],
@@ -244,7 +266,12 @@ export const agentTools: AgentTool[] = [
     tagline: "Turns any code repository into an interactive system-design page",
     worksWith: ["Claude Code", "Codex"],
     install: "npx github:JatinBhargava/repo-architecture-skill",
-    links: [{ label: "GitHub", href: "https://github.com/JatinBhargava/repo-architecture-skill" }],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/JatinBhargava/repo-architecture-skill",
+      },
+    ],
     highlights: [
       "Reads a repo and draws its clients, services, databases and outside APIs, then plays real request flows (sign-in, payments, webhooks, background jobs) through the diagram one hop at a time.",
       "Every step cites the file and line it came from, and a validator checks that each citation exists, so nothing on the page is guessed.",
@@ -254,10 +281,11 @@ export const agentTools: AgentTool[] = [
   {
     name: "guided-launch-film",
     kind: "Skill",
-    tagline: "Makes a cinematic 60-second product launch film with a guide character",
+    tagline:
+      "Makes a cinematic 60-second product launch film with a guide character",
     worksWith: ["Claude Code"],
     highlights: [
-      "Builds a 4K launch film on HyperFrames where a small \"buddy\" character walks the viewer through the product, with dry on-screen lines, an optional voice-over and a synthesized score.",
+      'Builds a 4K launch film on HyperFrames where a small "buddy" character walks the viewer through the product, with dry on-screen lines, an optional voice-over and a synthesized score.',
       "The guide lives on one overlay above every scene, so scenes can cut, zoom and dissolve underneath while it stays in frame.",
       "Used to make the launch film for Cold Email Desk.",
     ],
@@ -418,14 +446,18 @@ export const unusualAchievements: UnusualAchievement[] = [
 
 /** Right-rail "Latest trip" card: a magazine made with Atlas. */
 export const latestTrip = {
-  slug: 'kodaikanal',
-  place: 'Kodaikanal',
-  region: 'Tamil Nadu',
-  when: 'September 2026',
-  issueTitle: 'Kodaikanal: Where the Clouds Came Down to Meet Us',
-  dek: 'An intimate travel story about rain, friendship, misty forests, and the quiet beauty of getting lost in the hills.',
-  magazine: '/magazines/kodaikanal.pdf',
-  cover: '/magazines/kodaikanal-cover.jpg',
+  slug: "kodaikanal",
+  place: "Kodaikanal",
+  region: "Tamil Nadu",
+  when: "September 2026",
+  issueTitle: "Kodaikanal: Where the Clouds Came Down to Meet Us",
+  dek: "An intimate travel story about rain, friendship, misty forests, and the quiet beauty of getting lost in the hills.",
+  magazine: "/magazines/kodaikanal.pdf",
+  cover: "/magazines/kodaikanal-cover.jpg",
   /** Pages pre-rendered from the PDF with `pdftoppm -r 170`. */
-  pages: Array.from({ length: 11 }, (_, i) => `/magazines/kodaikanal/page-${String(i + 1).padStart(2, '0')}.jpg`),
+  pages: Array.from(
+    { length: 11 },
+    (_, i) =>
+      `/magazines/kodaikanal/page-${String(i + 1).padStart(2, "0")}.jpg`,
+  ),
 };
