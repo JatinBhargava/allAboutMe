@@ -103,8 +103,7 @@ export const experience: Experience[] = [
     role: "Software Engineer I",
     location: "Bengaluru, India",
     period: "Sep 2023 – Present",
-    context:
-      "Core banking , 5M+ customers",
+    context: "Core banking , 10M+ customers",
     highlights: [
       "Re-architected nightly batch processing into Kafka event-driven messaging across distributed services with idempotent consumers, retry topics, and dead-letter handling. Failed records now recover in minutes instead of waiting for the next 24-hour window.",
       "Cut customer-profile read latency from 1s to 40ms (96%) with a Redis read-through cache over customer and account reference data, using TTL plus event-driven invalidation to keep cached reads consistent with origination updates.",
